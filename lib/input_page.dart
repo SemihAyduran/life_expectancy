@@ -30,7 +30,12 @@ class _InputPageState extends State<InputPage> {
             ],
           ),
 
-          kutuYap(width: 500, height: 100),
+          kutuYap(child: Column(
+            children: [
+              Text('data'),
+              Text('data'),
+            ],
+          ), width: 500, height: 100),
           kutuYap(width: 500, height: 100),
           Row(
             children: [
