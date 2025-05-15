@@ -12,7 +12,9 @@ class IconCinsiyet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return kutuYap(
+    return 
+    
+    kutuYap(
       color: color,
       width: size.width * 0.445,
       height: size.height*0.19,
