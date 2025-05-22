@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:life_expectancy/icon_cinsiyet.dart';
+import 'package:life_expectancy/result_page.dart';
 import 'container_widget.dart';
 import 'constans.dart';
 
@@ -215,19 +216,24 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Expanded(
-                   child: TextButton(
-                                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                                   ),
-                                   onPressed: () {},
-                                   child: customText(
-                    color: Colors.black54,
-                    fontSize: 25,
-                    text: 'HESAPLA',
-                                   ),
-                                 ),
-                 ),] 
+                Expanded(
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.white,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(),));
+                    },
+                    child: customText(
+                      color: Colors.black54,
+                      fontSize: 25,
+                      text: 'HESAPLA',
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
