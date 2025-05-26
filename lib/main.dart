@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.lightBlue[100],
         primaryColor: Colors.lightGreen,
       ),
-      home: InputPage());
+      home: InputPage(),
+    );
   }
 }
-

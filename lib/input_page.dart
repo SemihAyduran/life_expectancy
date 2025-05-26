@@ -12,23 +12,31 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Life olusturulanSemih = Life();
+  late Life olusturulanSemih;
+
+  @override
+  void initState() {
+    olusturulanSemih = Life();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-        title: customText(
-          text: 'YAŞAM BEKLENTİSİ',
-          fontSize: 20,
-        ),
+        title: customText(text: 'YAŞAM BEKLENTİSİ', fontSize: 20),
         centerTitle: true,
       ),
       body: Column(
         children: [
-          BoyKilo(semih: olusturulanSemih,),
-          SigaraSpor(semih: olusturulanSemih,),
-          ErkekKadin(semih: olusturulanSemih,),
+          Row(
+            children: [
+              BoyKilo(semih: olusturulanSemih, boyMu: true),
+              BoyKilo(semih: olusturulanSemih, boyMu: false),
+            ],
+          ),
+          SigaraSpor(semih: olusturulanSemih),
+          ErkekKadin(semih: olusturulanSemih),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -44,13 +52,13 @@ class _InputPageState extends State<InputPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ResultPage(semih: olusturulanSemih,)),
+                        MaterialPageRoute(
+                          builder:
+                              (context) => ResultPage(semih: olusturulanSemih),
+                        ),
                       );
                     },
-                    child: customText(
-                      fontSize: 25,
-                      text: 'HESAPLA',
-                    ),
+                    child: customText(fontSize: 25, text: 'HESAPLA'),
                   ),
                 ),
               ],

@@ -7,8 +7,8 @@ class Life {
 
   Life({
     this.boy = 0,
-    this.icilenSigara = 0,
     this.kilo = 0,
+    this.icilenSigara = 0,
     this.seciliCinsiyet,
     this.yapilanSpor = 0,
   });

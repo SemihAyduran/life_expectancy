@@ -9,9 +9,7 @@ class Hesap {
 
     sonuc = 90 + semih.yapilanSpor - semih.icilenSigara;
     sonuc = sonuc + (semih.boy / semih.kilo);
-    semih.seciliCinsiyet == Genders.female
-        ? sonuc = sonuc + 3
-        : sonuc;
+    semih.seciliCinsiyet == Genders.female ? sonuc = sonuc + 3 : sonuc;
 
     return sonuc;
   }

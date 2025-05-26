@@ -13,7 +13,6 @@ class SigaraSpor extends StatefulWidget {
 }
 
 class _SigaraSporState extends State<SigaraSpor> {
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -32,9 +31,7 @@ class _SigaraSporState extends State<SigaraSpor> {
                   Color: Colors.black54,
                   fontSize: 20,
                 ),
-                customText(
-                  text: '${widget.semih.yapilanSpor.round()}',
-                ),
+                customText(text: '${widget.semih.yapilanSpor.round()}'),
                 Slider(
                   min: 0,
                   max: 7,
@@ -61,9 +58,7 @@ class _SigaraSporState extends State<SigaraSpor> {
                   Color: Colors.black54,
                   fontSize: 20,
                 ),
-                customText(
-                  text: '${widget.semih.icilenSigara.round()}',
-                ),
+                customText(text: '${widget.semih.icilenSigara.round()}'),
                 Slider(
                   min: 0,
                   max: 30,

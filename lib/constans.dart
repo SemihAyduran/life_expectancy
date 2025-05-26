@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 Widget customText({
-  Color=Colors.blue,
-  double fontSize= 25,
+  Color = Colors.blue,
+  double fontSize = 25,
   FontWeight fontWeight = FontWeight.bold,
   required String text,
 }) {
