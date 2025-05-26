@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:life_expectancy/constans.dart';
-import 'package:life_expectancy/input_page.dart';
+import 'package:life_expectancy/life.dart';
+import 'hesap.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({super.key});
+  final Life semih;
+  const ResultPage({super.key, required this.semih});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('SONUÇ SAYFASI')),
+      appBar: AppBar(
+        title: customText(text: 'SONUÇ SAYFASI', Color: Colors.black),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            flex: 14,
-            child: Center(child: customText(color: Colors.black54, fontSize: 25, text: 'Beklenen Yaşam Süresi'))),
-          Expanded(flex: 1,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: customText(
-                color: Colors.black54,
-                fontSize: 25,
-                text: 'GERİ DÖN',
-              ),
+          customText(text: 'BOY: ${semih.boy.toInt()}',Color: Colors.black),
+          customText(text: 'KİLO: ${semih.kilo.toInt()}',Color: Colors.black),
+          customText(text: 'SPOR: ${semih.yapilanSpor.toInt()}',Color: Colors.black),
+          customText(text: 'SİGARA: ${semih.icilenSigara.toInt()}',Color: Colors.black),
+          customText(text: 'CİNSİYET: ${semih.seciliCinsiyet!.name}',Color: Colors.black),
+          customText(
+            text:
+                'Beklenen Yaşam Süresi: ${Hesap(semih).hesaplama().toInt().toString()}', Color: Colors.black
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: customText(
+              Color: Colors.black,
+              fontSize: 25,
+              text: 'GERİ DÖN',
             ),
           ),
         ],
