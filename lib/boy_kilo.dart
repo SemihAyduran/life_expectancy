@@ -47,7 +47,9 @@ class _BoyKiloState extends State<BoyKilo> {
               children: [
                 GestureDetector(
                   onTapDown: (_) {
-                    _timer = Timer.periodic(Duration(milliseconds: 5), (timer) {
+                    _timer = Timer.periodic(Duration(milliseconds: 50), (
+                      timer,
+                    ) {
                       setState(() {
                         widget.boyMu == true
                             ? widget.semih.boy++
@@ -79,8 +81,12 @@ class _BoyKiloState extends State<BoyKilo> {
                     ) {
                       setState(() {
                         widget.boyMu == true
-                            ? widget.semih.boy--
-                            : widget.semih.kilo--;
+                            ? widget.semih.boy > 0
+                                ? widget.semih.boy--
+                                : null
+                            : widget.semih.kilo > 0
+                            ? widget.semih.kilo--
+                            : null;
                       });
                     });
                   },
@@ -94,8 +100,12 @@ class _BoyKiloState extends State<BoyKilo> {
                     onPressed: () {
                       setState(() {
                         widget.boyMu == true
-                            ? widget.semih.boy--
-                            : widget.semih.kilo--;
+                            ? widget.semih.boy > 0
+                                ? widget.semih.boy--
+                                : null
+                            : widget.semih.kilo > 0
+                            ? widget.semih.kilo--
+                            : null;
                       });
                     },
                     child: Icon(Icons.remove, size: 30),
