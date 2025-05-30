@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:life_expectancy/container_widget.dart';
 
-class IconCinsiyet extends StatelessWidget {
+class IconGender extends StatelessWidget {
   final String text;
   final IconData icon;
   final Color? color;
 
-  const IconCinsiyet({
+  const IconGender({
     super.key,
     required this.text,
     required this.icon,
@@ -16,7 +16,7 @@ class IconCinsiyet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return kutuYap(
+    return MakeBox(
       color: color,
       width: size.width * 0.445,
       height: size.height * 0.19,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget kutuYap({
+Widget MakeBox({
   double? width,
   double? height,
   Color? color = Colors.white,

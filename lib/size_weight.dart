@@ -4,24 +4,24 @@ import 'package:life_expectancy/container_widget.dart';
 import 'package:life_expectancy/life.dart';
 import 'dart:async';
 
-class BoyKilo extends StatefulWidget {
+class SizeWeight extends StatefulWidget {
   final Life semih;
-  final bool boyMu;
+  final bool isSize;
 
-  const BoyKilo({super.key, required this.semih, required this.boyMu});
+  const SizeWeight({super.key, required this.semih, required this.isSize});
 
   @override
-  State<BoyKilo> createState() => _BoyKiloState();
+  State<SizeWeight> createState() => _SizeWeightState();
 }
 
-class _BoyKiloState extends State<BoyKilo> {
+class _SizeWeightState extends State<SizeWeight> {
   Timer? _timer;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 
     return Expanded(
-      child: kutuYap(
+      child: MakeBox(
         width: size.width * 0.5,
         height: size.height * 0.18,
         child: Row(
@@ -29,7 +29,7 @@ class _BoyKiloState extends State<BoyKilo> {
             RotatedBox(
               quarterTurns: -1,
               child: customText(
-                text: widget.boyMu == true ? 'BOY' : 'KİLO',
+                text: widget.isSize == true ? 'BOY' : 'KİLO',
                 Color: Colors.black54,
               ),
             ),
@@ -37,9 +37,9 @@ class _BoyKiloState extends State<BoyKilo> {
               quarterTurns: -1,
               child: customText(
                 text:
-                    widget.boyMu == true
-                        ? '${widget.semih.boy}'
-                        : '${widget.semih.kilo}',
+                    widget.isSize == true
+                        ? '${widget.semih.size}'
+                        : '${widget.semih.weight}',
               ),
             ),
             Column(
@@ -51,9 +51,9 @@ class _BoyKiloState extends State<BoyKilo> {
                       timer,
                     ) {
                       setState(() {
-                        widget.boyMu == true
-                            ? widget.semih.boy++
-                            : widget.semih.kilo++;
+                        widget.isSize == true
+                            ? widget.semih.size++
+                            : widget.semih.weight++;
                       });
                     });
                   },
@@ -66,9 +66,9 @@ class _BoyKiloState extends State<BoyKilo> {
                   child: OutlinedButton(
                     onPressed: () {
                       setState(() {
-                        widget.boyMu == true
-                            ? widget.semih.boy++
-                            : widget.semih.kilo++;
+                        widget.isSize == true
+                            ? widget.semih.size++
+                            : widget.semih.weight++;
                       });
                     },
                     child: Icon(Icons.add, size: 30),
@@ -80,12 +80,12 @@ class _BoyKiloState extends State<BoyKilo> {
                       timer,
                     ) {
                       setState(() {
-                        widget.boyMu == true
-                            ? widget.semih.boy > 0
-                                ? widget.semih.boy--
+                        widget.isSize == true
+                            ? widget.semih.size > 0
+                                ? widget.semih.size--
                                 : null
-                            : widget.semih.kilo > 0
-                            ? widget.semih.kilo--
+                            : widget.semih.weight > 0
+                            ? widget.semih.weight--
                             : null;
                       });
                     });
@@ -99,12 +99,12 @@ class _BoyKiloState extends State<BoyKilo> {
                   child: OutlinedButton(
                     onPressed: () {
                       setState(() {
-                        widget.boyMu == true
-                            ? widget.semih.boy > 0
-                                ? widget.semih.boy--
+                        widget.isSize == true
+                            ? widget.semih.size > 0
+                                ? widget.semih.size--
                                 : null
-                            : widget.semih.kilo > 0
-                            ? widget.semih.kilo--
+                            : widget.semih.weight > 0
+                            ? widget.semih.weight--
                             : null;
                       });
                     },

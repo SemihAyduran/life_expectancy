@@ -20,7 +20,7 @@ class _SigaraSporState extends State<SigaraSpor> {
     return Column(
       children: [
         Container(
-          child: kutuYap(
+          child: MakeBox(
             width: size.width * 0.95,
             height: size.height * 0.178,
             child: Column(
@@ -31,14 +31,14 @@ class _SigaraSporState extends State<SigaraSpor> {
                   Color: Colors.black54,
                   fontSize: 20,
                 ),
-                customText(text: '${widget.semih.yapilanSpor.round()}'),
+                customText(text: '${widget.semih.sport.round()}'),
                 Slider(
                   min: 0,
                   max: 7,
-                  value: widget.semih.yapilanSpor,
+                  value: widget.semih.sport,
                   onChanged: (double newValue) {
                     setState(() {
-                      widget.semih.yapilanSpor = newValue;
+                      widget.semih.sport = newValue;
                     });
                   },
                 ),
@@ -47,7 +47,7 @@ class _SigaraSporState extends State<SigaraSpor> {
           ),
         ),
         Container(
-          child: kutuYap(
+          child: MakeBox(
             width: size.width * 0.95,
             height: size.height * 0.178,
             child: Column(
@@ -58,14 +58,14 @@ class _SigaraSporState extends State<SigaraSpor> {
                   Color: Colors.black54,
                   fontSize: 20,
                 ),
-                customText(text: '${widget.semih.icilenSigara.round()}'),
+                customText(text: '${widget.semih.cigarette.round()}'),
                 Slider(
                   min: 0,
                   max: 30,
-                  value: widget.semih.icilenSigara,
+                  value: widget.semih.cigarette,
                   onChanged: (double newValue) {
                     setState(() {
-                      widget.semih.icilenSigara = newValue;
+                      widget.semih.cigarette = newValue;
                     });
                   },
                 ),

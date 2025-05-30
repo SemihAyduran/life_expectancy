@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:life_expectancy/boy_kilo.dart';
+import 'package:life_expectancy/size_weight.dart';
 import 'package:life_expectancy/erkek_kadin.dart';
 import 'package:life_expectancy/life.dart';
 import 'package:life_expectancy/result_page.dart';
-import 'package:life_expectancy/sigara_spor.dart';
+import 'package:life_expectancy/cigarette_sport.dart';
 import 'constans.dart';
 
 class InputPage extends StatefulWidget {
@@ -12,11 +12,11 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  late Life olusturulanSemih;
+  late Life semih;
 
   @override
   void initState() {
-    olusturulanSemih = Life();
+    semih = Life();
     super.initState();
   }
 
@@ -31,12 +31,12 @@ class _InputPageState extends State<InputPage> {
         children: [
           Row(
             children: [
-              BoyKilo(semih: olusturulanSemih, boyMu: true),
-              BoyKilo(semih: olusturulanSemih, boyMu: false),
+              SizeWeight(semih: semih, isSize: true),
+              SizeWeight(semih: semih, isSize: false),
             ],
           ),
-          SigaraSpor(semih: olusturulanSemih),
-          ErkekKadin(semih: olusturulanSemih),
+          SigaraSpor(semih: semih),
+          Gender(semih: semih),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -54,7 +54,7 @@ class _InputPageState extends State<InputPage> {
                         context,
                         MaterialPageRoute(
                           builder:
-                              (context) => ResultPage(semih: olusturulanSemih),
+                              (context) => ResultPage(semih: semih),
                         ),
                       );
                     },

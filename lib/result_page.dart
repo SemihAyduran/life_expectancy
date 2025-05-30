@@ -16,23 +16,23 @@ class ResultPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          customText(text: 'BOY: ${semih.boy.toInt()}', Color: Colors.black),
-          customText(text: 'KİLO: ${semih.kilo.toInt()}', Color: Colors.black),
+          customText(text: 'BOY: ${semih.size.toInt()}', Color: Colors.black),
+          customText(text: 'KİLO: ${semih.weight.toInt()}', Color: Colors.black),
           customText(
-            text: 'SPOR: ${semih.yapilanSpor.toInt()}',
+            text: 'SPOR: ${semih.sport.toInt()}',
             Color: Colors.black,
           ),
           customText(
-            text: 'SİGARA: ${semih.icilenSigara.toInt()}',
+            text: 'SİGARA: ${semih.cigarette.toInt()}',
             Color: Colors.black,
           ),
           customText(
-            text: 'CİNSİYET: ${semih.seciliCinsiyet!.name}',
+            text: 'CİNSİYET: ${semih.gender!.name}',
             Color: Colors.black,
           ),
           customText(
             text:
-                'Beklenen Yaşam Süresi: ${Hesap(semih).hesaplama().toInt().toString()}',
+                'Beklenen Yaşam Süresi: ${Calculation(semih).bill().toInt().toString()}',
             Color: Colors.black,
           ),
           ElevatedButton(

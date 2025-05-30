@@ -1,20 +1,20 @@
 class Life {
-  Genders? seciliCinsiyet;
-  double icilenSigara;
-  double yapilanSpor;
-  int boy;
-  int kilo;
+  Genders? gender;
+  double cigarette;
+  double sport;
+  int size;
+  int weight;
 
   Life({
-    this.boy = 0,
-    this.kilo = 0,
-    this.icilenSigara = 0,
-    this.seciliCinsiyet,
-    this.yapilanSpor = 0,
+    this.size = 0,
+    this.weight = 0,
+    this.cigarette = 0,
+    this.gender,
+    this.sport = 0,
   });
 
   @override
-  String toString() => "seciliCinsiyet: $seciliCinsiyet";
+  String toString() => "$gender";
 }
 
 enum Genders { male, female }
