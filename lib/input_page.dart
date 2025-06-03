@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:life_expectancy/gender.dart';
 import 'package:life_expectancy/size_weight.dart';
-import 'package:life_expectancy/erkek_kadin.dart';
 import 'package:life_expectancy/life.dart';
 import 'package:life_expectancy/result_page.dart';
 import 'package:life_expectancy/cigarette_sport.dart';

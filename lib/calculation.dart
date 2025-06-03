@@ -5,12 +5,12 @@ class Calculation {
   Calculation(this.semih);
 
   double bill() {
-    double sonuc;
+    double result;
 
-    sonuc = 90 + semih.sport - semih.cigarette;
-    sonuc = sonuc + (semih.size / semih.weight);
-    semih.gender == Genders.female ? sonuc = sonuc + 3 : sonuc;
+    result = 90 + semih.sport - semih.cigarette;
+    result = result + (semih.size / semih.weight);
+    semih.gender == Genders.female ? result = result + 3 : result;
 
-    return sonuc;
+    return result;
   }
 }

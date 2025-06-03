@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:life_expectancy/calculation.dart';
 import 'package:life_expectancy/constans.dart';
 import 'package:life_expectancy/input_page.dart';
 import 'package:life_expectancy/life.dart';
-import 'hesap.dart';
 
 class ResultPage extends StatelessWidget {
   final Life semih;
