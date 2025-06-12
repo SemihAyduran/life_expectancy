@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:life_expectancy/calculation.dart';
 import 'package:life_expectancy/constans.dart';
-import 'package:life_expectancy/input_page.dart';
 import 'package:life_expectancy/life.dart';
 
 class ResultPage extends StatelessWidget {
-  final Life semih;
-  const ResultPage({super.key, required this.semih});
+  final Life life;
+  const ResultPage({super.key, required this.life});
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -16,40 +16,38 @@ class ResultPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          customText(text: 'BOY: ${semih.size.toInt()}', Color: Colors.black),
-          customText(text: 'KİLO: ${semih.weight.toInt()}', Color: Colors.black),
+          customText(text: 'BOY: ${life.size.toInt()}', Color: Colors.black),
+          customText(text: 'KİLO: ${life.weight.toInt()}', Color: Colors.black),
           customText(
-            text: 'SPOR: ${semih.sport.toInt()}',
+            text: 'SPOR: ${life.sport.toInt()}',
             Color: Colors.black,
           ),
           customText(
-            text: 'SİGARA: ${semih.cigarette.toInt()}',
+            text: 'SİGARA: ${life.cigarette.toInt()}',
             Color: Colors.black,
           ),
           customText(
-            text: 'CİNSİYET: ${semih.gender!.name}',
+            text: 'CİNSİYET: ${life.gender!.name}',
             Color: Colors.black,
           ),
           customText(
             text:
-                'Beklenen Yaşam Süresi: ${Calculation(semih).bill().toInt().toString()}',
+                'Beklenen Yaşam Süresi: ${Calculation(life).bill().toInt().toString()}',
             Color: Colors.black,
           ),
           ElevatedButton(
-            child: customText(text: 'GERİ DÖN'),
             style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
             onPressed: () {
               Navigator.pop(context);
             },
+            child: customText(text: 'GERİ DÖN'),
           ),
           ElevatedButton(
             child: customText(text: 'SIFIRLA'),
             onPressed: () {
-              Navigator.pushAndRemoveUntil(
+              Navigator.pop(
                 context,
-                MaterialPageRoute(builder: (context) => InputPage()),
-                (route) => false,
-              );
+                Life());
             },
           ),
         ],

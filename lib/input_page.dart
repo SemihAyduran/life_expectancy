@@ -7,16 +7,18 @@ import 'package:life_expectancy/cigarette_sport.dart';
 import 'constans.dart';
 
 class InputPage extends StatefulWidget {
+  const InputPage({super.key});
+
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  late Life semih;
+  late Life life;
 
   @override
   void initState() {
-    semih = Life();
+    life = Life();
     super.initState();
   }
 
@@ -31,12 +33,12 @@ class _InputPageState extends State<InputPage> {
         children: [
           Row(
             children: [
-              SizeWeight(semih: semih, isSize: true),
-              SizeWeight(semih: semih, isSize: false),
+              SizeWeight(life: life, isSize: true),
+              SizeWeight(life: life, isSize: false),
             ],
           ),
-          SigaraSpor(semih: semih),
-          Gender(semih: semih),
+          SigaraSpor(life: life),
+          Gender(life: life),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -45,18 +47,22 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
+                      backgroundColor: WidgetStateProperty.all<Color>(
                         Colors.white,
                       ),
                     ),
-                    onPressed: () {
+                    onPressed: () async{
+                      life = await 
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder:
-                              (context) => ResultPage(semih: semih),
+                              (context) => ResultPage(life: life),
                         ),
                       );
+                      setState(() {
+                        
+                      });
                     },
                     child: customText(fontSize: 25, text: 'HESAPLA'),
                   ),

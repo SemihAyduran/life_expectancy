@@ -4,9 +4,9 @@ import 'package:life_expectancy/icon_gender.dart';
 import 'package:life_expectancy/life.dart';
 
 class Gender extends StatefulWidget {
-  const Gender({super.key, required this.semih});
+  const Gender({super.key, required this.life});
 
-  final Life semih;
+  final Life life;
   @override
   State<Gender> createState() => _GenderState();
 }
@@ -21,12 +21,12 @@ class _GenderState extends State<Gender> {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  widget.semih.gender = Genders.male;
+                  widget.life.gender = Genders.male;
                 });
               },
               child: IconGender(
                 color:
-                    widget.semih.gender == Genders.male
+                    widget.life.gender == Genders.male
                         ? Colors.grey
                         : Colors.white,
                 text: 'ERKEK',
@@ -38,12 +38,12 @@ class _GenderState extends State<Gender> {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  widget.semih.gender = Genders.female;
+                  widget.life.gender = Genders.female;
                 });
               },
               child: IconGender(
                 color:
-                    widget.semih.gender == Genders.female
+                    widget.life.gender == Genders.female
                         ? Colors.grey
                         : Colors.white,
                 text: 'KADIN',

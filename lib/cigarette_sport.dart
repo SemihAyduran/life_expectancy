@@ -4,9 +4,9 @@ import 'package:life_expectancy/container_widget.dart';
 import 'package:life_expectancy/life.dart';
 
 class SigaraSpor extends StatefulWidget {
-  final Life semih;
+  final Life life;
 
-  const SigaraSpor({super.key, required this.semih});
+  const SigaraSpor({super.key, required this.life});
 
   @override
   State<SigaraSpor> createState() => _SigaraSporState();
@@ -31,14 +31,14 @@ class _SigaraSporState extends State<SigaraSpor> {
                   Color: Colors.black54,
                   fontSize: 20,
                 ),
-                customText(text: '${widget.semih.sport.round()}'),
+                customText(text: '${widget.life.sport.round()}'),
                 Slider(
                   min: 0,
                   max: 7,
-                  value: widget.semih.sport,
+                  value: widget.life.sport,
                   onChanged: (double newValue) {
                     setState(() {
-                      widget.semih.sport = newValue;
+                      widget.life.sport = newValue;
                     });
                   },
                 ),
@@ -58,14 +58,14 @@ class _SigaraSporState extends State<SigaraSpor> {
                   Color: Colors.black54,
                   fontSize: 20,
                 ),
-                customText(text: '${widget.semih.cigarette.round()}'),
+                customText(text: '${widget.life.cigarette.round()}'),
                 Slider(
                   min: 0,
                   max: 30,
-                  value: widget.semih.cigarette,
+                  value: widget.life.cigarette,
                   onChanged: (double newValue) {
                     setState(() {
-                      widget.semih.cigarette = newValue;
+                      widget.life.cigarette = newValue;
                     });
                   },
                 ),

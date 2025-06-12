@@ -5,10 +5,10 @@ import 'package:life_expectancy/life.dart';
 import 'dart:async';
 
 class SizeWeight extends StatefulWidget {
-  final Life semih;
+  final Life life;
   final bool isSize;
 
-  const SizeWeight({super.key, required this.semih, required this.isSize});
+  const SizeWeight({super.key, required this.life, required this.isSize});
 
   @override
   State<SizeWeight> createState() => _SizeWeightState();
@@ -38,8 +38,8 @@ class _SizeWeightState extends State<SizeWeight> {
               child: customText(
                 text:
                     widget.isSize == true
-                        ? '${widget.semih.size}'
-                        : '${widget.semih.weight}',
+                        ? '${widget.life.size}'
+                        : '${widget.life.weight}',
               ),
             ),
             Column(
@@ -52,8 +52,8 @@ class _SizeWeightState extends State<SizeWeight> {
                     ) {
                       setState(() {
                         widget.isSize == true
-                            ? widget.semih.size++
-                            : widget.semih.weight++;
+                            ? widget.life.size++
+                            : widget.life.weight++;
                       });
                     });
                   },
@@ -67,8 +67,8 @@ class _SizeWeightState extends State<SizeWeight> {
                     onPressed: () {
                       setState(() {
                         widget.isSize == true
-                            ? widget.semih.size++
-                            : widget.semih.weight++;
+                            ? widget.life.size++
+                            : widget.life.weight++;
                       });
                     },
                     child: Icon(Icons.add, size: 30),
@@ -81,11 +81,11 @@ class _SizeWeightState extends State<SizeWeight> {
                     ) {
                       setState(() {
                         widget.isSize == true
-                            ? widget.semih.size > 0
-                                ? widget.semih.size--
+                            ? widget.life.size > 0
+                                ? widget.life.size--
                                 : null
-                            : widget.semih.weight > 0
-                            ? widget.semih.weight--
+                            : widget.life.weight > 0
+                            ? widget.life.weight--
                             : null;
                       });
                     });
@@ -100,11 +100,11 @@ class _SizeWeightState extends State<SizeWeight> {
                     onPressed: () {
                       setState(() {
                         widget.isSize == true
-                            ? widget.semih.size > 0
-                                ? widget.semih.size--
+                            ? widget.life.size > 0
+                                ? widget.life.size--
                                 : null
-                            : widget.semih.weight > 0
-                            ? widget.semih.weight--
+                            : widget.life.weight > 0
+                            ? widget.life.weight--
                             : null;
                       });
                     },
